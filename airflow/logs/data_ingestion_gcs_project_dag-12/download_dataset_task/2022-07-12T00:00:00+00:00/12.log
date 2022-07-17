@@ -1,0 +1,43 @@
+[2022-07-13 20:54:53,146] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 20:54:53,164] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 20:54:53,164] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 20:54:53,165] {taskinstance.py:1239} INFO - Starting attempt 12 of 13
+[2022-07-13 20:54:53,165] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 20:54:53,184] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2022-07-12 00:00:00+00:00
+[2022-07-13 20:54:53,194] {standard_task_runner.py:52} INFO - Started process 1108 to run task
+[2022-07-13 20:54:53,206] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_project_dag-12', 'download_dataset_task', 'scheduled__2022-07-12T00:00:00+00:00', '--job-id', '114', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs.py', '--cfg-path', '/tmp/tmpkipim1rq', '--error-file', '/tmp/tmpsup7e2gi']
+[2022-07-13 20:54:53,208] {standard_task_runner.py:77} INFO - Job 114: Subtask download_dataset_task
+[2022-07-13 20:54:53,370] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [running]> on host 1baccf4ebc57
+[2022-07-13 20:54:53,578] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_project_dag-12
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-12T00:00:00+00:00
+[2022-07-13 20:54:53,579] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-13 20:54:53,580] {subprocess.py:74} INFO - Running command: ['bash', '-c', '#!/usr/bin\npip install kaggle\n\nexport KAGGLE_USERNAME=yusufkamorudeen\nexport KAGGLE_KEY=f9e7d64641f620123ab335c78451fdf4\n\n\n\n\n\nDATASET_ID=cheneblanc\nDATASET_NAME=housing-prices-35-fr\n\nkaggle datasets download -d $DATASET_ID/$DATASET_NAME --unzip -p "/opt/***/$DATASET_ID"\n\n\n\n\n\n']
+[2022-07-13 20:54:53,611] {subprocess.py:85} INFO - Output:
+[2022-07-13 20:54:54,355] {subprocess.py:89} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2022-07-13 20:54:54,506] {subprocess.py:89} INFO - Requirement already satisfied: kaggle in /home/***/.local/lib/python3.7/site-packages (1.5.12)
+[2022-07-13 20:54:54,514] {subprocess.py:89} INFO - Requirement already satisfied: tqdm in /home/***/.local/lib/python3.7/site-packages (from kaggle) (4.64.0)
+[2022-07-13 20:54:54,514] {subprocess.py:89} INFO - Requirement already satisfied: certifi in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2020.12.5)
+[2022-07-13 20:54:54,515] {subprocess.py:89} INFO - Requirement already satisfied: requests in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.26.0)
+[2022-07-13 20:54:54,516] {subprocess.py:89} INFO - Requirement already satisfied: six>=1.10 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.16.0)
+[2022-07-13 20:54:54,516] {subprocess.py:89} INFO - Requirement already satisfied: urllib3 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.26.7)
+[2022-07-13 20:54:54,517] {subprocess.py:89} INFO - Requirement already satisfied: python-slugify in /home/***/.local/lib/python3.7/site-packages (from kaggle) (4.0.1)
+[2022-07-13 20:54:54,517] {subprocess.py:89} INFO - Requirement already satisfied: python-dateutil in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.8.2)
+[2022-07-13 20:54:54,542] {subprocess.py:89} INFO - Requirement already satisfied: text-unidecode>=1.3 in /home/***/.local/lib/python3.7/site-packages (from python-slugify->kaggle) (1.3)
+[2022-07-13 20:54:54,560] {subprocess.py:89} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (3.3)
+[2022-07-13 20:54:54,562] {subprocess.py:89} INFO - Requirement already satisfied: charset-normalizer~=2.0.0 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (2.0.9)
+[2022-07-13 20:55:00,802] {subprocess.py:89} INFO - WARNING: You are using pip version 21.3.1; however, version 22.1.2 is available.
+[2022-07-13 20:55:00,802] {subprocess.py:89} INFO - You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+[2022-07-13 20:55:02,297] {subprocess.py:89} INFO - Downloading housing-prices-35-fr.zip to /opt/***/cheneblanc
+[2022-07-13 20:55:06,786] {subprocess.py:89} INFO -   0%|          | 0.00/21.6M [00:00<?, ?B/s]  5%|▍         | 1.00M/21.6M [00:00<00:03, 6.46MB/s] 14%|█▍        | 3.00M/21.6M [00:00<00:02, 8.02MB/s] 19%|█▊        | 4.00M/21.6M [00:00<00:02, 7.70MB/s] 28%|██▊       | 6.00M/21.6M [00:00<00:01, 9.92MB/s] 32%|███▏      | 7.00M/21.6M [00:00<00:01, 8.57MB/s] 42%|████▏     | 9.00M/21.6M [00:01<00:01, 8.96MB/s] 46%|████▋     | 10.0M/21.6M [00:01<00:01, 8.55MB/s] 51%|█████     | 11.0M/21.6M [00:01<00:01, 8.22MB/s] 56%|█████▌    | 12.0M/21.6M [00:01<00:01, 8.06MB/s] 60%|██████    | 13.0M/21.6M [00:01<00:01, 7.45MB/s] 65%|██████▍   | 14.0M/21.6M [00:01<00:01, 7.37MB/s] 69%|██████▉   | 15.0M/21.6M [00:01<00:00, 7.22MB/s] 74%|███████▍  | 16.0M/21.6M [00:02<00:00, 7.38MB/s] 79%|███████▊  | 17.0M/21.6M [00:02<00:00, 7.98MB/s] 83%|████████▎ | 18.0M/21.6M [00:02<00:00, 8.22MB/s] 88%|████████▊ | 19.0M/21.6M [00:02<00:00, 8.50MB/s] 93%|█████████▎| 20.0M/21.6M [00:02<00:00, 8.59MB/s] 97%|█████████▋| 21.0M/21.6M [00:02<00:00, 7.45MB/s]100%|██████████| 21.6M/21.6M [00:02<00:00, 8.06MB/s]
+[2022-07-13 20:55:06,787] {subprocess.py:89} INFO - 
+[2022-07-13 20:55:06,977] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-07-13 20:55:07,102] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_project_dag-12, task_id=download_dataset_task, execution_date=20220712T000000, start_date=20220713T205453, end_date=20220713T205507
+[2022-07-13 20:55:07,162] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-07-13 20:55:07,225] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

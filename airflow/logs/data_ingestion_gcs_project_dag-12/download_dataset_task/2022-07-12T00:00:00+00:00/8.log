@@ -1,0 +1,43 @@
+[2022-07-13 10:52:22,315] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 10:52:22,326] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 10:52:22,327] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 10:52:22,327] {taskinstance.py:1239} INFO - Starting attempt 8 of 9
+[2022-07-13 10:52:22,327] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 10:52:22,340] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2022-07-12 00:00:00+00:00
+[2022-07-13 10:52:22,346] {standard_task_runner.py:52} INFO - Started process 3440 to run task
+[2022-07-13 10:52:22,351] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_project_dag-12', 'download_dataset_task', 'scheduled__2022-07-12T00:00:00+00:00', '--job-id', '19', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs.py', '--cfg-path', '/tmp/tmpy2oqcogm', '--error-file', '/tmp/tmpmuio6gl5']
+[2022-07-13 10:52:22,352] {standard_task_runner.py:77} INFO - Job 19: Subtask download_dataset_task
+[2022-07-13 10:52:22,429] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-12T00:00:00+00:00 [running]> on host 1baccf4ebc57
+[2022-07-13 10:52:22,504] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_project_dag-12
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-12T00:00:00+00:00
+[2022-07-13 10:52:22,505] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-13 10:52:22,507] {subprocess.py:74} INFO - Running command: ['bash', '-c', '#!/usr/bin\npip install kaggle\n\nexport KAGGLE_USERNAME=yusufkamorudeen\nexport KAGGLE_KEY=f9e7d64641f620123ab335c78451fdf4\n\n\n\n\n\nDATASET_ID=mashlyn\nDATASET_NAME=online-retail-ii-uci\n\nkaggle datasets download -d $DATASET_ID/$DATASET_NAME --unzip -p "/opt/***/$DATASET_ID"\n\n\n\n\n\n']
+[2022-07-13 10:52:22,522] {subprocess.py:85} INFO - Output:
+[2022-07-13 10:52:23,055] {subprocess.py:89} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2022-07-13 10:52:23,141] {subprocess.py:89} INFO - Requirement already satisfied: kaggle in /home/***/.local/lib/python3.7/site-packages (1.5.12)
+[2022-07-13 10:52:23,151] {subprocess.py:89} INFO - Requirement already satisfied: urllib3 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.26.7)
+[2022-07-13 10:52:23,151] {subprocess.py:89} INFO - Requirement already satisfied: requests in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.26.0)
+[2022-07-13 10:52:23,152] {subprocess.py:89} INFO - Requirement already satisfied: six>=1.10 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.16.0)
+[2022-07-13 10:52:23,153] {subprocess.py:89} INFO - Requirement already satisfied: certifi in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2020.12.5)
+[2022-07-13 10:52:23,153] {subprocess.py:89} INFO - Requirement already satisfied: python-slugify in /home/***/.local/lib/python3.7/site-packages (from kaggle) (4.0.1)
+[2022-07-13 10:52:23,153] {subprocess.py:89} INFO - Requirement already satisfied: python-dateutil in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.8.2)
+[2022-07-13 10:52:23,154] {subprocess.py:89} INFO - Requirement already satisfied: tqdm in /home/***/.local/lib/python3.7/site-packages (from kaggle) (4.64.0)
+[2022-07-13 10:52:23,177] {subprocess.py:89} INFO - Requirement already satisfied: text-unidecode>=1.3 in /home/***/.local/lib/python3.7/site-packages (from python-slugify->kaggle) (1.3)
+[2022-07-13 10:52:23,199] {subprocess.py:89} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (3.3)
+[2022-07-13 10:52:23,202] {subprocess.py:89} INFO - Requirement already satisfied: charset-normalizer~=2.0.0 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (2.0.9)
+[2022-07-13 10:52:28,275] {subprocess.py:89} INFO - WARNING: You are using pip version 21.3.1; however, version 22.1.2 is available.
+[2022-07-13 10:52:28,276] {subprocess.py:89} INFO - You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+[2022-07-13 10:52:29,456] {subprocess.py:89} INFO - Downloading online-retail-ii-uci.zip to /opt/***/mashlyn
+[2022-07-13 10:52:32,167] {subprocess.py:89} INFO -   0%|          | 0.00/14.5M [00:00<?, ?B/s]  7%|▋         | 1.00M/14.5M [00:00<00:01, 7.39MB/s] 21%|██        | 3.00M/14.5M [00:00<00:01, 9.70MB/s] 34%|███▍      | 5.00M/14.5M [00:00<00:00, 10.4MB/s] 48%|████▊     | 7.00M/14.5M [00:00<00:00, 10.9MB/s] 62%|██████▏   | 9.00M/14.5M [00:00<00:00, 11.1MB/s] 76%|███████▌  | 11.0M/14.5M [00:01<00:00, 11.2MB/s] 90%|████████▉ | 13.0M/14.5M [00:01<00:00, 11.4MB/s]100%|██████████| 14.5M/14.5M [00:01<00:00, 11.3MB/s]100%|██████████| 14.5M/14.5M [00:01<00:00, 11.0MB/s]
+[2022-07-13 10:52:32,167] {subprocess.py:89} INFO - 
+[2022-07-13 10:52:32,333] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-07-13 10:52:32,402] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_project_dag-12, task_id=download_dataset_task, execution_date=20220712T000000, start_date=20220713T105222, end_date=20220713T105232
+[2022-07-13 10:52:32,468] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-07-13 10:52:32,559] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

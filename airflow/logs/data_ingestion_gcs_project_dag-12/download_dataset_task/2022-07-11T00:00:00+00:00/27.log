@@ -1,0 +1,27 @@
+[2022-07-12 20:53:19,105] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [queued]>
+[2022-07-12 20:53:19,116] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [queued]>
+[2022-07-12 20:53:19,117] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 20:53:19,117] {taskinstance.py:1239} INFO - Starting attempt 27 of 28
+[2022-07-12 20:53:19,117] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 20:53:19,131] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2022-07-11 00:00:00+00:00
+[2022-07-12 20:53:19,137] {standard_task_runner.py:52} INFO - Started process 2470 to run task
+[2022-07-12 20:53:19,146] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_project_dag-12', 'download_dataset_task', 'scheduled__2022-07-11T00:00:00+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs.py', '--cfg-path', '/tmp/tmpf9zpo31c', '--error-file', '/tmp/tmp5tn_3i6p']
+[2022-07-12 20:53:19,147] {standard_task_runner.py:77} INFO - Job 52: Subtask download_dataset_task
+[2022-07-12 20:53:19,228] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [running]> on host b7c97f870ea6
+[2022-07-12 20:53:19,359] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_project_dag-12
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-11T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-11T00:00:00+00:00
+[2022-07-12 20:53:19,360] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-12 20:53:19,361] {subprocess.py:74} INFO - Running command: ['bash', '-c', '#!/usr/bin\n\nexport KAGGLE_USERNAME=yusufkamorudeen\nexport KAGGLE_KEY=f9e7d64641f620123ab335c78451fdf4\n\n\ndataset_id=mashlyn/online-retail-ii-uci\ndata_name=online-retail-ii-uci.zip\n\nkaggle datasets download -d $dataset_id -p "/opt/***/$dataset_id"\n\n\n#mv $data_name uk_housing.zip\n\n\n']
+[2022-07-12 20:53:19,403] {subprocess.py:85} INFO - Output:
+[2022-07-12 20:53:20,387] {subprocess.py:89} INFO - online-retail-ii-uci.zip: Skipping, found more recently modified local copy (use --force to force download)
+[2022-07-12 20:53:20,593] {subprocess.py:93} INFO - Command exited with return code 0
+[2022-07-12 20:53:20,635] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=data_ingestion_gcs_project_dag-12, task_id=download_dataset_task, execution_date=20220711T000000, start_date=20220712T205319, end_date=20220712T205320
+[2022-07-12 20:53:20,696] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-07-12 20:53:20,773] {local_task_job.py:264} INFO - 1 downstream tasks scheduled from follow-on schedule check

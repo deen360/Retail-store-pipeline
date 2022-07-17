@@ -1,0 +1,80 @@
+[2022-07-13 21:33:00,490] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.format_to_parquet_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 21:33:00,516] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.format_to_parquet_task scheduled__2022-07-12T00:00:00+00:00 [queued]>
+[2022-07-13 21:33:00,517] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 21:33:00,517] {taskinstance.py:1239} INFO - Starting attempt 23 of 24
+[2022-07-13 21:33:00,518] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-13 21:33:00,616] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): format_to_parquet_task> on 2022-07-12 00:00:00+00:00
+[2022-07-13 21:33:00,638] {standard_task_runner.py:52} INFO - Started process 2762 to run task
+[2022-07-13 21:33:00,651] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_project_dag-12', 'format_to_parquet_task', 'scheduled__2022-07-12T00:00:00+00:00', '--job-id', '126', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs.py', '--cfg-path', '/tmp/tmpmgcid8st', '--error-file', '/tmp/tmpqxoafd6e']
+[2022-07-13 21:33:00,653] {standard_task_runner.py:77} INFO - Job 126: Subtask format_to_parquet_task
+[2022-07-13 21:33:00,892] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_project_dag-12.format_to_parquet_task scheduled__2022-07-12T00:00:00+00:00 [running]> on host 1baccf4ebc57
+[2022-07-13 21:33:01,305] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_project_dag-12
+AIRFLOW_CTX_TASK_ID=format_to_parquet_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-12T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-12T00:00:00+00:00
+[2022-07-13 21:33:01,312] {logging_mixin.py:109} INFO - /opt/***/sobhanmoosavi/US_Accidents_Dec21_updated.csv
+[2022-07-13 21:36:03,004] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/upload_to_gcs.py", line 50, in format_to_parquet
+    pq.write_table(table, src_file.replace('.csv', '.parquet'))
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet.py", line 1987, in write_table
+    writer.write_table(table, row_group_size=row_group_size)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet.py", line 693, in write_table
+    self.writer.write_table(table, row_group_size=row_group_size)
+  File "pyarrow/_parquet.pyx", line 1439, in pyarrow._parquet.ParquetWriter.write_table
+  File "pyarrow/error.pxi", line 99, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: Casting from timestamp[ns] to timestamp[us] would lose data: 1633449998995523400
+[2022-07-13 21:36:04,041] {taskinstance.py:1277} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ingestion_gcs_project_dag-12, task_id=format_to_parquet_task, execution_date=20220712T000000, start_date=20220713T213300, end_date=20220713T213604
+[2022-07-13 21:36:04,236] {standard_task_runner.py:92} ERROR - Failed to execute job 126 for task format_to_parquet_task
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 174, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 185, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/upload_to_gcs.py", line 50, in format_to_parquet
+    pq.write_table(table, src_file.replace('.csv', '.parquet'))
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet.py", line 1987, in write_table
+    writer.write_table(table, row_group_size=row_group_size)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyarrow/parquet.py", line 693, in write_table
+    self.writer.write_table(table, row_group_size=row_group_size)
+  File "pyarrow/_parquet.pyx", line 1439, in pyarrow._parquet.ParquetWriter.write_table
+  File "pyarrow/error.pxi", line 99, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: Casting from timestamp[ns] to timestamp[us] would lose data: 1633449998995523400
+[2022-07-13 21:36:08,927] {local_task_job.py:212} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2022-07-13 21:36:09,044] {process_utils.py:124} INFO - Sending Signals.SIGTERM to group 2762. PIDs of all processes in the group: [2762]
+[2022-07-13 21:36:09,067] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 2762
+[2022-07-13 21:36:09,335] {process_utils.py:70} INFO - Process psutil.Process(pid=2762, status='terminated', exitcode=1, started='21:33:00') (2762) terminated with exit code 1

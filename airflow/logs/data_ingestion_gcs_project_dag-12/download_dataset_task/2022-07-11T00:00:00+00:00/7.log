@@ -1,0 +1,96 @@
+[2022-07-12 18:08:17,512] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [queued]>
+[2022-07-12 18:08:17,524] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [queued]>
+[2022-07-12 18:08:17,524] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 18:08:17,524] {taskinstance.py:1239} INFO - Starting attempt 7 of 8
+[2022-07-12 18:08:17,524] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-07-12 18:08:17,539] {taskinstance.py:1259} INFO - Executing <Task(BashOperator): download_dataset_task> on 2022-07-11 00:00:00+00:00
+[2022-07-12 18:08:17,545] {standard_task_runner.py:52} INFO - Started process 972 to run task
+[2022-07-12 18:08:17,556] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'data_ingestion_gcs_project_dag-12', 'download_dataset_task', 'scheduled__2022-07-11T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs.py', '--cfg-path', '/tmp/tmp0xxm5850', '--error-file', '/tmp/tmpxw10jiz4']
+[2022-07-12 18:08:17,557] {standard_task_runner.py:77} INFO - Job 15: Subtask download_dataset_task
+[2022-07-12 18:08:17,636] {logging_mixin.py:109} INFO - Running <TaskInstance: data_ingestion_gcs_project_dag-12.download_dataset_task scheduled__2022-07-11T00:00:00+00:00 [running]> on host b7c97f870ea6
+[2022-07-12 18:08:17,720] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=data_ingestion_gcs_project_dag-12
+AIRFLOW_CTX_TASK_ID=download_dataset_task
+AIRFLOW_CTX_EXECUTION_DATE=2022-07-11T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-07-11T00:00:00+00:00
+[2022-07-12 18:08:17,722] {subprocess.py:62} INFO - Tmp dir root location: 
+ /tmp
+[2022-07-12 18:08:17,723] {subprocess.py:74} INFO - Running command: ['bash', '-c', '#!/bin/bash\n#url to kaggle dataset to be used\n\npip install kaggle\n\ndataset_id=mashlyn/online-retail-ii-uci\ndata_name=online-retail-ii-uci.zip\n\nkaggle datasets download -d $dataset_id -p housing\n\n\n#mv $data_name uk_housing.zip\n\n\n']
+[2022-07-12 18:08:17,739] {subprocess.py:85} INFO - Output:
+[2022-07-12 18:08:19,507] {subprocess.py:89} INFO - Defaulting to user installation because normal site-packages is not writeable
+[2022-07-12 18:08:20,061] {subprocess.py:89} INFO - Collecting kaggle
+[2022-07-12 18:08:20,179] {subprocess.py:89} INFO -   Downloading kaggle-1.5.12.tar.gz (58 kB)
+[2022-07-12 18:08:20,235] {subprocess.py:89} INFO -   Preparing metadata (setup.py): started
+[2022-07-12 18:08:20,905] {subprocess.py:89} INFO -   Preparing metadata (setup.py): finished with status 'done'
+[2022-07-12 18:08:20,905] {subprocess.py:89} INFO - Requirement already satisfied: six>=1.10 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.16.0)
+[2022-07-12 18:08:20,906] {subprocess.py:89} INFO - Requirement already satisfied: certifi in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2020.12.5)
+[2022-07-12 18:08:20,906] {subprocess.py:89} INFO - Requirement already satisfied: python-dateutil in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.8.2)
+[2022-07-12 18:08:20,906] {subprocess.py:89} INFO - Requirement already satisfied: requests in /home/***/.local/lib/python3.7/site-packages (from kaggle) (2.26.0)
+[2022-07-12 18:08:21,099] {subprocess.py:89} INFO - Collecting tqdm
+[2022-07-12 18:08:21,121] {subprocess.py:89} INFO -   Downloading tqdm-4.64.0-py2.py3-none-any.whl (78 kB)
+[2022-07-12 18:08:21,142] {subprocess.py:89} INFO - Requirement already satisfied: python-slugify in /home/***/.local/lib/python3.7/site-packages (from kaggle) (4.0.1)
+[2022-07-12 18:08:21,143] {subprocess.py:89} INFO - Requirement already satisfied: urllib3 in /home/***/.local/lib/python3.7/site-packages (from kaggle) (1.26.7)
+[2022-07-12 18:08:21,153] {subprocess.py:89} INFO - Requirement already satisfied: text-unidecode>=1.3 in /home/***/.local/lib/python3.7/site-packages (from python-slugify->kaggle) (1.3)
+[2022-07-12 18:08:21,174] {subprocess.py:89} INFO - Requirement already satisfied: idna<4,>=2.5 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (3.3)
+[2022-07-12 18:08:21,178] {subprocess.py:89} INFO - Requirement already satisfied: charset-normalizer~=2.0.0 in /home/***/.local/lib/python3.7/site-packages (from requests->kaggle) (2.0.9)
+[2022-07-12 18:08:21,225] {subprocess.py:89} INFO - Building wheels for collected packages: kaggle
+[2022-07-12 18:08:21,227] {subprocess.py:89} INFO -   Building wheel for kaggle (setup.py): started
+[2022-07-12 18:08:21,911] {subprocess.py:89} INFO -   Building wheel for kaggle (setup.py): finished with status 'done'
+[2022-07-12 18:08:21,912] {subprocess.py:89} INFO -   Created wheel for kaggle: filename=kaggle-1.5.12-py3-none-any.whl size=73051 sha256=a918f49f202db0c669f3e04692d15556d54f9edfd79346b5fa5de5ecce515364
+[2022-07-12 18:08:21,912] {subprocess.py:89} INFO -   Stored in directory: /home/***/.cache/pip/wheels/62/d6/58/5853130f941e75b2177d281eb7e44b4a98ed46dd155f556dc5
+[2022-07-12 18:08:21,912] {subprocess.py:89} INFO - Successfully built kaggle
+[2022-07-12 18:08:29,557] {subprocess.py:89} INFO - Installing collected packages: tqdm, kaggle
+[2022-07-12 18:08:29,846] {subprocess.py:89} INFO - Successfully installed kaggle-1.5.12 tqdm-4.64.0
+[2022-07-12 18:08:30,197] {subprocess.py:89} INFO - WARNING: You are using pip version 21.3.1; however, version 22.1.2 is available.
+[2022-07-12 18:08:30,197] {subprocess.py:89} INFO - You should consider upgrading via the '/usr/local/bin/python -m pip install --upgrade pip' command.
+[2022-07-12 18:08:30,742] {subprocess.py:89} INFO - Traceback (most recent call last):
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -   File "/home/***/.local/bin/kaggle", line 5, in <module>
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -     from kaggle.cli import main
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -   File "/home/***/.local/lib/python3.7/site-packages/kaggle/__init__.py", line 23, in <module>
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -     api.authenticate()
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -   File "/home/***/.local/lib/python3.7/site-packages/kaggle/api/kaggle_api_extended.py", line 166, in authenticate
+[2022-07-12 18:08:30,743] {subprocess.py:89} INFO -     self.config_file, self.config_dir))
+[2022-07-12 18:08:30,744] {subprocess.py:89} INFO - OSError: Could not find kaggle.json. Make sure it's located in /home/***/.kaggle. Or use the environment method.
+[2022-07-12 18:08:30,866] {subprocess.py:93} INFO - Command exited with return code 1
+[2022-07-12 18:08:30,886] {taskinstance.py:1700} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 188, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-07-12 18:08:30,893] {taskinstance.py:1277} INFO - Marking task as UP_FOR_RETRY. dag_id=data_ingestion_gcs_project_dag-12, task_id=download_dataset_task, execution_date=20220711T000000, start_date=20220712T180817, end_date=20220712T180830
+[2022-07-12 18:08:30,916] {standard_task_runner.py:92} ERROR - Failed to execute job 15 for task download_dataset_task
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 85, in _start_by_fork
+    args.func(args, dag=self.dag)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 48, in command
+    return func(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 92, in wrapper
+    return f(*args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 298, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 107, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 184, in _run_raw_task
+    error_file=args.error_file,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 70, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1329, in _run_raw_task
+    self._execute_task_with_callbacks(context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1455, in _execute_task_with_callbacks
+    result = self._execute_task(context, self.task)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1511, in _execute_task
+    result = execute_callable(context=context)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/bash.py", line 188, in execute
+    f'Bash command failed. The command returned a non-zero exit code {result.exit_code}.'
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2022-07-12 18:08:30,968] {local_task_job.py:154} INFO - Task exited with return code 1
+[2022-07-12 18:08:31,019] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
