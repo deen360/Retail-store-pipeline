@@ -1,8 +1,8 @@
 #!/usr/bin
 pip install kaggle
 
-export KAGGLE_USERNAME=yusufkamorudeen
-export KAGGLE_KEY=f9e7d64641f620123ab335c78451fdf4
+export KAGGLE_USERNAME=yuxxxxxxxxxxxxxxxxx
+export KAGGLE_KEY=f9e7d64641f620xxxxxxxxxxxxxx
 
 
 
