@@ -11,7 +11,7 @@ terraform {
 
 #indicates the provider block  as well as the zones you want to use in cofiguration, also download and input the json file in same folder
 provider "google" {
-  credentials = file(".keys/dtc-deen-credentials.json")
+  credentials = file("/home/deen/.google/credentials/google_credentials.json")
 
   project = "dtc-deen"
   region  = "europe-west6"
