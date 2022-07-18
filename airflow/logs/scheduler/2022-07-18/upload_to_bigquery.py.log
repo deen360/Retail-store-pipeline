@@ -1,0 +1,21 @@
+[2022-07-18 16:35:07,669] {processor.py:163} INFO - Started process (PID=49) to work on /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:07,675] {processor.py:642} INFO - Processing file /opt/airflow/dags/upload_to_bigquery.py for tasks to queue
+[2022-07-18 16:35:07,686] {logging_mixin.py:109} INFO - [2022-07-18 16:35:07,686] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:15,748] {processor.py:654} INFO - DAG(s) dict_keys(['data_ingestion_gcs_project_dag-14']) retrieved from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:18,361] {logging_mixin.py:109} INFO - [2022-07-18 16:35:18,361] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-07-18 16:35:18,468] {logging_mixin.py:109} INFO - [2022-07-18 16:35:18,468] {dag.py:2935} INFO - Setting next_dagrun for data_ingestion_gcs_project_dag-14 to None
+[2022-07-18 16:35:18,550] {processor.py:171} INFO - Processing /opt/airflow/dags/upload_to_bigquery.py took 10.911 seconds
+[2022-07-18 16:35:48,759] {processor.py:163} INFO - Started process (PID=81) to work on /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:48,769] {processor.py:642} INFO - Processing file /opt/airflow/dags/upload_to_bigquery.py for tasks to queue
+[2022-07-18 16:35:48,771] {logging_mixin.py:109} INFO - [2022-07-18 16:35:48,771] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:51,520] {processor.py:654} INFO - DAG(s) dict_keys(['data_ingestion_gcs_project_dag-14']) retrieved from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:35:51,529] {logging_mixin.py:109} INFO - [2022-07-18 16:35:51,529] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-07-18 16:35:51,548] {logging_mixin.py:109} INFO - [2022-07-18 16:35:51,548] {dag.py:2935} INFO - Setting next_dagrun for data_ingestion_gcs_project_dag-14 to None
+[2022-07-18 16:35:51,558] {processor.py:171} INFO - Processing /opt/airflow/dags/upload_to_bigquery.py took 2.810 seconds
+[2022-07-18 16:36:21,750] {processor.py:163} INFO - Started process (PID=105) to work on /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:36:21,752] {processor.py:642} INFO - Processing file /opt/airflow/dags/upload_to_bigquery.py for tasks to queue
+[2022-07-18 16:36:21,756] {logging_mixin.py:109} INFO - [2022-07-18 16:36:21,756] {dagbag.py:500} INFO - Filling up the DagBag from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:36:23,263] {processor.py:654} INFO - DAG(s) dict_keys(['data_ingestion_gcs_project_dag-14']) retrieved from /opt/airflow/dags/upload_to_bigquery.py
+[2022-07-18 16:36:23,278] {logging_mixin.py:109} INFO - [2022-07-18 16:36:23,278] {dag.py:2396} INFO - Sync 1 DAGs
+[2022-07-18 16:36:23,304] {logging_mixin.py:109} INFO - [2022-07-18 16:36:23,303] {dag.py:2935} INFO - Setting next_dagrun for data_ingestion_gcs_project_dag-14 to None
+[2022-07-18 16:36:23,314] {processor.py:171} INFO - Processing /opt/airflow/dags/upload_to_bigquery.py took 1.570 seconds
