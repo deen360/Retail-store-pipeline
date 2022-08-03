@@ -33,19 +33,6 @@ AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'all_online_retail')
 
 
-
-#here we convertthe file to from csv to parquet or from csv.zip to csv to parquet, this depends on if the file is zipped or not then it removes the zip file and only keeps the csv file   
-
-#/re-write
-
-
-
-
-
-# NOTE: takes 20 mins, at an upload speed of 800kbps. Faster if your internet has a better upload speed
-
-
-
 default_args = {
     "owner": "airflow",
     "start_date": days_ago(1),
