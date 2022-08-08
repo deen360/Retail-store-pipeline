@@ -26,7 +26,7 @@ resource "google_storage_bucket" "online-retail11401" {
 
   versioning {
     enabled = true
-  }
+  } 
 
   lifecycle_rule {
     action {
