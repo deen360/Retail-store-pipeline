@@ -5,8 +5,8 @@ Introduction
 
 Technologies Used 
 Dataset source 
-https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci
-Kaggle api(for Kaggle dataset)
+![kaggle](https://www.kaggle.com/datasets/mashlyn/online-retail-ii-uci)
+api(for Kaggle dataset)
 
 Cloud services: Google Cloud Platform
 
@@ -55,7 +55,7 @@ Dashboard: data studio
 used to create dashboard 
 
 #dashboard link 
-[https://datastudio.google.com/s/o4pMpnr_Cp0](https://datastudio.google.com/reporting/a713b799-202f-40ed-80b8-e1002ff5bf47)
+![datastudio](https://datastudio.google.com/reporting/a713b799-202f-40ed-80b8-e1002ff5bf47)
 
 ![Screenshot from 2022-07-17 09-43-16](https://user-images.githubusercontent.com/74934494/179569709-abd7c1ee-c01d-4de5-aea5-923d2af0bbc5.png)
 
